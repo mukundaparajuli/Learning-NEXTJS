@@ -13,11 +13,11 @@ export default async function GetUsers() {
   return (
     <>
       <h1>Users</h1>
-      <div className="grid grid-cols-2 gap-2 text-[#ffffff] m-4">
+      <div className="grid grid-cols-2 gap-2 text-white m-4">
         {data.map((user) => (
           <div
             key={user.id}
-            className="flex justify-between justify-items-center bg-[#444242] p-4 rounded-md"
+            className="flex justify-between justify-items-center bg-slate-700 p-4 rounded-md"
           >
             <div className="">
               <div className="text-lg font-semibold">{user.name}</div>
