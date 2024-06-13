@@ -8,14 +8,18 @@ type Product = {
 };
 
 export default async function ProductPage() {
-  const response = await fetch("http://localhost:3001/products");
+  const response = await fetch("http://localhost:3001/products", {
+    next: {
+      revalidate: 10,
+    },
+  });
   const products = await response.json();
 
-  const cookieStore = cookies();
-  cookieStore.get("theme");
+  // const cookieStore = cookies();
+  // cookieStore.get("theme");
 
-  const detailResponse = await fetch("http://localhost:3001/products/1");
-  const details = await response.json();
+  // const detailResponse = await fetch("http://localhost:3001/products/1");
+  // const details = await response.json();
 
   return (
     <ul className="flex flex-col gap-4 m-2">
